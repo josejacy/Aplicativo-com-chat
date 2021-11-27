@@ -1,21 +1,14 @@
 import React, { useState, Component } from "react";
 import styled from "styled-components/native";
-import { Button, View, Image, Text, FlatList, ScrollView } from 'react-native';
-import api from './services/apiNoticias';
-import CardNoticia from "./noticias/card.noticia";
-
-
-
+import { Image, Text, ScrollView, FlatList } from 'react-native';
+import api from '../services/apiDocUteis';
+import CardDocUteis from "./cardDocUteis";
 
 const Page = styled.SafeAreaView`
     background-color: #FFF;
     flex: 1;
     align-items: center;
 `;
-
-
-
-
 
 const Input = styled.TextInput`
     height: 40px;
@@ -32,7 +25,6 @@ const TextoHeader = styled.Text`
      margin-left: 10px;
 
  `;
-
 const Header = styled.View`
      flex: 1;
      flex-direction: row;
@@ -51,20 +43,19 @@ const Body = styled.View`
  `;
 
 
-
-class Noticias extends Component {
+class documentosUteis extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            CardNoticia: []
+            CardDocUteis: []
         }
     };
 
     async componentDidMount() {
-        const response = await api.get('apiapp/api_noticias.php/');
+        const response = await api.get('apiapp/api_doc_uteis.php/');
         this.setState({
-            CardNoticia: response.data
+            CardDocUteis: response.data
         })
     }
 
@@ -72,16 +63,16 @@ class Noticias extends Component {
         return (
             <Page>
                 <Header>
-                    <Image style={{ height: 30, width: 30 }} source={require('./image/logo_defendoria.jpg')} />
+                    <Image style={{ height: 30, width: 30 }} source={require('../image/logo_defendoria.jpg')} />
                     <TextoHeader>Defensoria Publica do Acre</TextoHeader>
                 </Header>
-                <Text style={{ fontSize: 18, margin: 10 }}>Notícias</Text>
+                <Text style={{ fontSize: 18, margin: 10 }}>Documentos Úteis</Text>
                 <Body>
                     <ScrollView>
                         <FlatList
-                            data={this.state.CardNoticia}
+                            data={this.state.CardDocUteis}
                             keyExtractor={item => item.id.toString()}
-                            renderItem={({ item }) => <CardNoticia data={item} />}
+                            renderItem={({ item }) => <CardDocUteis data={item} />}
                         />
 
                     </ScrollView>
@@ -93,4 +84,4 @@ class Noticias extends Component {
 
 
 
-export default Noticias;
+export default documentosUteis;

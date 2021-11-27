@@ -9,7 +9,7 @@ import Root  from '../../../app/index2';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from './Home';
-import Documentos from './Documentos';
+import Documentos from './documentUteis/Documentos';
 import Noticias from './noticias';
 import menuDrawer from './components/menuDrawer';
 

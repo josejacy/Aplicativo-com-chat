@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from 'styled-components/native';
- import {Button, Image} from 'react-native';
+import { Button, Image } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
 
 const Page = styled.SafeAreaView`
     background-color: #FFF;
@@ -16,14 +19,14 @@ const Input = styled.TextInput`
     margin-top: 5px;
     background-color: #FFF;
 `;
- const TextoHeader = styled.Text`
+const TextoHeader = styled.Text`
      font-size: 15px;
      color: #FFF;
      font-weight: 600;
      margin-left: 10px;
 
  `;
- const Header = styled.View`
+const Header = styled.View`
      flex: 1;
      flex-direction: row;
      height: 70px;
@@ -34,7 +37,7 @@ const Input = styled.TextInput`
   
  `;
 
- const Body = styled.View `
+const Body = styled.View`
    flex: 9;
    background: #FFF;
    align-items: center;
@@ -42,28 +45,29 @@ const Input = styled.TextInput`
  `;
 
 
- function HomeScreen () {
+function HomeScreen() {
     const [nome, setNome] = useState('DEFENSORIA PÚBLICA DO ACRE');
     return (
-            <Page>
-                <Header>
-                    <Image style={{height: 30, width: 30}} source={require('./image/logo_defendoria.jpg')} />
-             <TextoHeader>{nome}</TextoHeader>
-             </Header>
-             <Body>
-              <Image style={{height: 250, width: 250}}  source={require('./image/logo_defendoria.jpg')} />
-            <Input></Input>
-            {/* <Button  title='Continue'/>
-            <Button  title='Deixar Gravado'/>
-            <Button  title='Criar conta Nova'/> */}
+        <Page>
+            <Header>
+                <Image style={{ height: 30, width: 30 }} source={require('./image/logo_defendoria.jpg')} />
+                <TextoHeader>{nome}</TextoHeader>
+            </Header>
+            <Body>
+                <Image style={{ height: 250, width: 250 }} source={require('./image/logo_defendoria.jpg')} />
+                <Input></Input>
+                <Button title='Continue' />
+                <Button title='Deixar Gravado' />
+                <Button title='Criar conta Nova' />
+                <Button title='Chat' />
             </Body>
-             
-                 
-            </Page>
-        
-      
-            
-       
+
+
+        </Page>
+
+
+
+
     );
 }
 
