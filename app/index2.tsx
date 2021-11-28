@@ -1,4 +1,5 @@
 import React from 'react';
+import {SafeAreaView, Text} from 'react-native';
 import { Dimensions, Linking } from 'react-native';
 import { AppearanceProvider } from 'react-native-appearance';
 import { Provider } from 'react-redux';
@@ -208,6 +209,7 @@ export default class Root extends React.Component<{}, IState> {
 	render() {
 		const { themePreferences, theme, width, height, scale, fontScale } = this.state;
 		return (
+			<SafeAreaView>
 			<SafeAreaProvider initialMetrics={initialWindowMetrics}>
 				<AppearanceProvider>
 					<Provider store={store}>
@@ -238,6 +240,7 @@ export default class Root extends React.Component<{}, IState> {
 					</Provider>
 				</AppearanceProvider>
 			</SafeAreaProvider>
+			</SafeAreaView>
 		);
 	}
 }

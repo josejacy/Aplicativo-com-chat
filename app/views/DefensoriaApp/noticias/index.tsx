@@ -5,7 +5,7 @@ class Filmes extends Component {
     render(){
         return(
             <View>
-                <Text>...</Text>
+                <Text>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia voluptatem, perferendis eligendi similique distinctio a voluptatibus corrupti. Atque esse impedit, similique delectus dolorum ducimus, harum aperiam doloremque sequi, rerum eum!</Text>
             </View>
         );
     }

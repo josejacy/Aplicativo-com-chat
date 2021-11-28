@@ -1,21 +1,14 @@
 import React, { useState, Component } from "react";
 import styled from "styled-components/native";
 import { Button, View, Image, Text, FlatList, ScrollView } from 'react-native';
-import api from './services/apiNoticias';
-import CardNoticia from "./noticias/card.noticia";
-
-
-
+import api from './apiNoticias';
+import CardNoticia from "./card.noticia";
 
 const Page = styled.SafeAreaView`
     background-color: #FFF;
     flex: 1;
     align-items: center;
 `;
-
-
-
-
 
 const Input = styled.TextInput`
     height: 40px;
@@ -50,8 +43,6 @@ const Body = styled.View`
    align-items: center;
  `;
 
-
-
 class Noticias extends Component {
 
     constructor(props) {
@@ -72,7 +63,7 @@ class Noticias extends Component {
         return (
             <Page>
                 <Header>
-                    <Image style={{ height: 30, width: 30 }} source={require('./image/logo_defendoria.jpg')} />
+                    <Image style={{ height: 30, width: 30 }} source={require('../image/logo_defendoria.jpg')} />
                     <TextoHeader>Defensoria Publica do Acre</TextoHeader>
                 </Header>
                 <Text style={{ fontSize: 18, margin: 10 }}>Notícias</Text>

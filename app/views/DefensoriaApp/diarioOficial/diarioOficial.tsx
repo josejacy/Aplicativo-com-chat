@@ -1,8 +1,8 @@
 import React, { useState, Component } from "react";
 import styled from "styled-components/native";
 import { Image, Text, ScrollView, FlatList } from 'react-native';
-import api from './apiDocUteis';
-import CardDocUteis from "./cardDocUteis";
+import api from './apiDiarioOficial';
+import CardDiarioOficial from "./cardDiarioOficial";
 
 const Page = styled.SafeAreaView`
     background-color: #FFF;
@@ -43,19 +43,19 @@ const Body = styled.View`
  `;
 
 
-class documentosUteis extends Component {
+class diarioOficial extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            CardDocUteis: []
+            CardDiarioOficial: []
         }
     };
 
     async componentDidMount() {
-        const response = await api.get('apiapp/api_doc_uteis.php/');
+        const response = await api.get('apiapp/api_diario_eletronico.php/');
         this.setState({
-            CardDocUteis: response.data
+            CardDiarioOficial: response.data
         })
     }
 
@@ -66,13 +66,13 @@ class documentosUteis extends Component {
                     <Image style={{ height: 30, width: 30 }} source={require('../image/logo_defendoria.jpg')} />
                     <TextoHeader>Defensoria Publica do Acre</TextoHeader>
                 </Header>
-                <Text style={{ fontSize: 18, margin: 10 }}>Documentos Úteis</Text>
+                <Text style={{ fontSize: 18, margin: 10 }}>Diario Oficial</Text>
                 <Body>
                     <ScrollView>
                         <FlatList
-                            data={this.state.CardDocUteis}
+                            data={this.state.CardDiarioOficial}
                             keyExtractor={item => item.id.toString()}
-                            renderItem={({ item }) => <CardDocUteis data={item} />}
+                            renderItem={({ item }) => <CardDiarioOficial data={item} />}
                         />
 
                     </ScrollView>
@@ -82,4 +82,4 @@ class documentosUteis extends Component {
     };
 }
 
-export default documentosUteis;
+export default diarioOficial;

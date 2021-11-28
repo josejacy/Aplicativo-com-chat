@@ -11,9 +11,7 @@ const Card = styled.View`
     align-items: center;
     padding: 10px;
     border-radius: 5px;
-    
-    
-    
+
 `;
 const TextDataPublicao = styled.Text `
     font-weight: 400;
@@ -33,7 +31,6 @@ const TextoHeaderCard = styled.Text`
      font-size: 14px;
      color: #000;
     
-
  `;
 
 const TextNoticia = styled.Text`
@@ -42,7 +39,6 @@ color: #000;
 text-align: justify;
 margin-left: 10;
 margin-right: 10;
-
 
 `;
  const TextSubTitle = styled.Text `
@@ -54,10 +50,7 @@ margin-right: 10;
  text-align: center;
 `;
 
-
-
 class CardNoticia extends Component {
-    
     
     render(){
         return(

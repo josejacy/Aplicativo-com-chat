@@ -1,8 +1,6 @@
 import React, { Component} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import styled from "styled-components/native";
-
-
 
 
 const Card = styled.View`
@@ -13,10 +11,7 @@ const Card = styled.View`
     padding: 5px;
     border-radius: 5px;
     margin-left: 15;
-    margin-right: 15;
-    
-    
-    
+    margin-right: 15; 
 `;
 
  const TextSubTitle = styled.Text `
@@ -26,20 +21,14 @@ const Card = styled.View`
  text-align: left;
 `;
 
-
-
 class CardDocUteis extends Component {
-    
-    
+     
     render(){
         return(
             <View>
                   
                  <Card>
-
-                   
                         <TextSubTitle>{this.props.data.texto}</TextSubTitle>
-                           
                 </Card> 
             </View>
         )

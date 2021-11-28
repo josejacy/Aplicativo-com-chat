@@ -10,8 +10,10 @@ import Root  from '../../../app/index2';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from './Home';
 import Documentos from './documentUteis/Documentos';
-import Noticias from './noticias';
+import Noticias from './noticias/noticias';
 import menuDrawer from './components/menuDrawer';
+import DiarioOficial from './diarioOficial/diarioOficial';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -27,6 +29,7 @@ export default function App() {
       <Drawer.Screen name="Chat" component={Root} />
       <Drawer.Screen name="Documentos Úteis" component={Documentos} />
       <Drawer.Screen  name="Noticias" component={Noticias} />
+      <Drawer.Screen  name="Diario Oficial" component={DiarioOficial} />
       
       
       
